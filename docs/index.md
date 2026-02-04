@@ -1,7 +1,8 @@
 ---
 title: "Cleaning Data in Python"
 layout: "home"
-description: ""
+description: "This guide shows the user how to use Spyder to load and clean data for further analysis."
+created_date: 2016-11-01
 permalink: "/"  #! Remove this if not the homepage
 ---
 
@@ -36,11 +37,11 @@ This guide shows the user how to use Spyder to load and clean data for further a
 
 ### **Software**
 
-If you are using Python for data analysis, we recommend the **Anaconda Scientific Python Distribution**. It is completely free, and ideal for processing data as well as for performing predictive analysis and scientific computing. You can get the latest version of Anaconda at <https://www.anaconda.com/distribution/>. It's available for Windows, macOS, and Linux. For more information about getting started with Anaconda and other Anaconda\-related support, please refer to [https://docs.anaconda.com/anaconda/](https://docs.anaconda.com/anaconda/.).
+If you are using Python for data analysis, we recommend the **Anaconda Scientific Python Distribution**. It is completely free, and ideal for processing data as well as for performing predictive analysis and scientific computing. You can get the latest version of Anaconda at <https://www.anaconda.com/distribution/>. It's available for Windows, macOS, and Linux. For more information about getting started with Anaconda and other Anaconda-related support, please refer to [https://docs.anaconda.com/anaconda/](https://docs.anaconda.com/anaconda/.).
 
 After you download the Anaconda distribution to your local machine, install it and open Anaconda Navigator. A number of applications are available by default. For this tutorial, Spyder will be used.
 
-Spyder is an open source cross\-platform Integrated Development Environment (IDE) for data science. It integrates essential libraries for data analysis, including **NumPy**, **SciPy**, and **pandas**~~—~~ all of which will be used in this tutorial.
+Spyder is an open source cross-platform Integrated Development Environment (IDE) for data science. It integrates essential libraries for data analysis, including **NumPy**, **SciPy**, and **pandas**~~—~~ all of which will be used in this tutorial.
 
 ![]({{ '/assets/images/CleanDataPython-29.PNG' | relative_url }})
 
@@ -54,15 +55,15 @@ The results of our code will also appear in the console.
 
 ![]({{ '/assets/images/CleanDataPython-01.PNG' | relative_url }})
 
-If you are brand new to Spyder, the application comes with a helpful tutorial. This can be launched by clicking **Help** (at the top menu) \> **Spyder tutorial**.
+If you are brand new to Spyder, the application comes with a helpful tutorial. This can be launched by clicking **Help** (at the top menu) > **Spyder tutorial**.
 
-This Help tool can also be accessed by clicking the Help tab (above the console, on the right). This tool allows you to search for different commands or python objects, and get more information and/or instructions about them. Alternatively, you can highlight commands or objects written in the editor/console and type **Ctrl \+ I**.
+This Help tool can also be accessed by clicking the Help tab (above the console, on the right). This tool allows you to search for different commands or python objects, and get more information and/or instructions about them. Alternatively, you can highlight commands or objects written in the editor/console and type **Ctrl + I**.
 
 More functions of the Help section will be introduced later in this tutorial.
 
 ![]({{ '/assets/images/CleanDataPython-31.PNG' | relative_url }})
 
-Lastly, you can personalize the font, background color, theme and other appearance properties of Sypder. This can be done by clicking **Tools** (at the top menu) **\> Preferences**. Below is an example of a dark background theme in Spyder.
+Lastly, you can personalize the font, background color, theme and other appearance properties of Sypder. This can be done by clicking **Tools** (at the top menu) **> Preferences**. Below is an example of a dark background theme in Spyder.
 
 ![]({{ '/assets/images/CleanDataPython-30.png' | relative_url }})
 
@@ -72,7 +73,7 @@ Lastly, you can personalize the font, background color, theme and other appearan
 
 For data analysis in Python, we recommend several libraries (also referred to as packages). A Python library is a collection of functions and methods that allow you to executre complex actions without writing long lines of code. All these libraries are included in the Spyder platform and can simply be imported and used. These include:
 
-* **pandas**: a library providing high\-performance, easy\-to\-use data structures and data analysis tools. Complete documentation can be found here ([https://pandas.pydata.org/pandas\-docs/stable/index.html](https://pandas.pydata.org/pandas-docs/stable/index.html)). You can also check out a 10\-minute tour of pandas ([https://www.youtube.com/watch?v\=\_T8LGqJtuGc](https://www.youtube.com/watch?v=_T8LGqJtuGc)) from Wes McKinney [(https://wesmckinney.com/](https://wesmckinney.com/))
+* **pandas**: a library providing high-performance, easy-to-use data structures and data analysis tools. Complete documentation can be found here ([https://pandas.pydata.org/pandas-docs/stable/index.html](https://pandas.pydata.org/pandas-docs/stable/index.html)). You can also check out a 10-minute tour of pandas ([https://www.youtube.com/watch?v=_T8LGqJtuGc](https://www.youtube.com/watch?v=_T8LGqJtuGc)) from Wes McKinney [(https://wesmckinney.com/](https://wesmckinney.com/))
 * **NumPy**: the fundamental package for scientific computing
 * **matplotlib**: the most popular Python library for producing graphs and other 2D data visualizations
 * **SciPy**: a collection of packages addressing a number of different standard problem domains in scientific computing
@@ -80,7 +81,7 @@ For data analysis in Python, we recommend several libraries (also referred to as
 
  
 
-### 
+
 
 ### **CLEANING DATA IN PYTHON**
 
@@ -90,9 +91,9 @@ This tutorial will cover the basic steps needed for cleaning data using Python.
 
 ### **Download Dataset**
 
-The dataset used in this tutorial is the **Canadian Community Health Survey, 2012: Mental Health Component**. You can directly access the dataset from here:[https://search1\.odesi.ca/\#/details?uri\=%2Fodesi%2Fcchs\-82M0013\-E\-2012\-m…](https://search1.odesi.ca/#/details?uri=%2Fodesi%2Fcchs-82M0013-E-2012-mental-health.xml), or you can go to [odesi.ca](https://search2.odesi.ca/#/) and search for the term "CCHS 2012". Choose the entry, "Canadian Community Health Survey, 2012: Mental Health Component".
+The dataset used in this tutorial is the **Canadian Community Health Survey, 2012: Mental Health Component**. You can directly access the dataset from here: [https://search1.odesi.ca/#/details?uri=%2Fodesi%2Fcchs-82M0013-E-2012-m…](https://search1.odesi.ca/#/details?uri=%2Fodesi%2Fcchs-82M0013-E-2012-mental-health.xml), or you can go to [odesi.ca](https://search2.odesi.ca/#/) and search for the term "CCHS 2012". Choose the entry, "Canadian Community Health Survey, 2012: Mental Health Component".
 
-After loading the page, click "Explore \& Download".
+After loading the page, click "Explore & Download".
 
 ![]({{ '/assets/images/CleanDataPython-35.PNG' | relative_url }})
 
@@ -102,7 +103,7 @@ In this new page, find the "**Download**" button on the top right corner.
 
  
 
-In the download page, from the "select the data format" drop\-down menu, pick "**Comma Separated Value file**" for a csv file that python can work with. Check the "Include documentation" box, and then click "DOWNLOAD" to download the dataset and the related documentation in a compressed zip file.
+In the download page, from the "select the data format" drop-down menu, pick "**Comma Separated Value file**" for a csv file that python can work with. Check the "Include documentation" box, and then click "DOWNLOAD" to download the dataset and the related documentation in a compressed zip file.
 
 ![]({{ '/assets/images/CleanDataPython-37.PNG' | relative_url }})
 
@@ -116,10 +117,10 @@ You will find a csv file and a PDF file in the unzipped folder. The csv file con
 
 After you open Spyder, you can direct it to the dataset that you want to clean. This is the location (path) of where your unzipped folder is saved on your computer and is achieved by running a few lines of code that set up your working directory. If you are new to paths and working directories, a succinct introduction can be found [here](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python/). Furthermore, these tutorials provide instructions on determining the path of your unzipped folder in [windows](https://www.isumsoft.com/computer/2-ways-to-copy-full-path-of-files-and-folders.html) and [mac](https://www.switchingtomac.com/tutorials/osx/5-ways-to-reveal-the-path-of-a-file-on-macos/) operating systems.
 
-The following code for sets up a working directory. Please note, in python, anything after the "\#" symbol is considered to be comments related to the code.
+The following code for sets up a working directory. Please note, in python, anything after the "#" symbol is considered to be comments related to the code.
 
 `import os #import the os library (enables operating system dependent functionality)  
-os.chdir('C:\YourFolderPathGoesHere') #change directory  
+os.chdir('C:YourFolderPathGoesHere') #change directory  
 os.getcwd() #get the current working directory to confirm the directory change`
 
 ![]({{ '/assets/images/CleanDataPython-38_0.PNG' | relative_url }})
@@ -137,29 +138,29 @@ data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv')`
 
 ![]({{ '/assets/images/CleanDataPython-39.PNG' | relative_url }})
 
-The first line imports the ***pandas*** library, which will be used throughout this tutorial. The next line uses the ***read\_csv*** command in pandas to load the CCHS2012 dataset to the system and assigns it the variable "data". From now on, when you want to refer to your CCHS2012 dataset, you can just use the variable "data".
+The first line imports the ***pandas*** library, which will be used throughout this tutorial. The next line uses the ***read_csv*** command in pandas to load the CCHS2012 dataset to the system and assigns it the variable "data". From now on, when you want to refer to your CCHS2012 dataset, you can just use the variable "data".
 
-It is always helpful to get an idea of our dataset before cleaning it. Above the console in the***Help*** pane, by clicking on the tab "***Variable explorer***" you will be able to see the details of each variable defined in the current console session, including data type and size.
+It is always helpful to get an idea of our dataset before cleaning it. Above the console in the ***Help*** pane, by clicking on the tab "***Variable explorer***" you will be able to see the details of each variable defined in the current console session, including data type and size.
 
 ![]({{ '/assets/images/CleanDataPython-40.PNG' | relative_url }})
 
-Double\-clicking a variable in the "Variable explorer" pane will open a new window displaying the whole dataset.
+Double-clicking a variable in the "Variable explorer" pane will open a new window displaying the whole dataset.
 
 ![]({{ '/assets/images/CleanDataPython-41_0.PNG' | relative_url }})
 
-We can also see the dimension of the dataset using the ***shape***command. In our case, the dataset has 25113 rows and 586 columns.
+We can also see the dimension of the dataset using the ***shape*** command. In our case, the dataset has 25113 rows and 586 columns.
 
 `print(data.shape)`
 
 ![]({{ '/assets/images/CleanDataPython-43.PNG' | relative_url }})
 
-Furthermore, we can view the descriptive statistics of the varaibles in our dataset with numeric values using the ***describe***command.
+Furthermore, we can view the descriptive statistics of the varaibles in our dataset with numeric values using the ***describe*** command.
 
 `data.describe()`
 
 ![]({{ '/assets/images/CleanDataPython-44.PNG' | relative_url }})
 
-It is important for our analysis to identify the missing values in our dataset. This can be achieved by setting determined missing values to **NaN** (missing data) when we are loading the dataset into the program (using the "read\_csv" function introduced above).
+It is important for our analysis to identify the missing values in our dataset. This can be achieved by setting determined missing values to **NaN** (missing data) when we are loading the dataset into the program (using the "read_csv" function introduced above).
 
 Suppose a column that's expected to have numerical values has recorded the letter 'g' by mistake in some records. We can use the below code to set these extraneous values to NaN.
 
@@ -186,7 +187,7 @@ You can find all the rows where a specific column holds NaN values as follows
 
 `data[pandas.isnull(data['GEO_PRV'])]`
 
-Though in this case, the column 'GEO\_PRV' does not contain any NaN values, resulting in an empty data frame.
+Though in this case, the column 'GEO_PRV' does not contain any NaN values, resulting in an empty data frame.
 
 ![]({{ '/assets/images/CleanDataPython-10.PNG' | relative_url }})
 
@@ -225,7 +226,7 @@ Pandas offers a variety of options for selecting subests of a dataset. Subset se
 
 **![]({{ '/assets/images/CleanDataPython-18.PNG' | relative_url }})**
 
-**Furthermore, you can create a subset by selecting variable names**: e.g. get column “VERDATE”, “ADM\_RNO”,  and “GEO\_PRV”
+**Furthermore, you can create a subset by selecting variable names**: e.g. get column “VERDATE”, “ADM_RNO”,  and “GEO_PRV”
 
 `data.loc[:,['VERDATE', 'ADM_RNO', 'GEO_PRV']]` 
 
@@ -253,7 +254,7 @@ Pandas also allows us to drop, or remove, extraneous data from our dataset.
 
 **![]({{ '/assets/images/CleanDataPython-22.PNG' | relative_url }})**
 
-**Or we can drop variables**: e.g. drop columns with header "GEOGCMA1" and "ADM\_N09". Note that in the command, **axis\=1** indicates a column to be dropped. Axis\=0 indicates a row/index to be dropped.
+**Or we can drop variables**: e.g. drop columns with header "GEOGCMA1" and "ADM_N09". Note that in the command, **axis=1** indicates a column to be dropped. Axis=0 indicates a row/index to be dropped.
 
 `data.drop(['GEOGCMA1', 'ADM_N09'], axis=1)`
 
@@ -285,7 +286,7 @@ You might want to **r****eplace values**. To replace all instances of the value 
 
 `data = data.replace(1, 7)`
 
-The replace function returns a **copy** of the altered dataset but keeps the original dataset intact. In order to retain your changes, it is important to assign a variable to the returning dataset. Using **data \=** replaces the previous dataset with the renamed dataset (in this case, the original dataset 'data' is replaced with the result of the replace function).
+The replace function returns a **copy** of the altered dataset but keeps the original dataset intact. In order to retain your changes, it is important to assign a variable to the returning dataset. Using **data =** replaces the previous dataset with the renamed dataset (in this case, the original dataset 'data' is replaced with the result of the replace function).
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy011.png.pagespeed.ic.kiWPYA_SlG.png)![]({{ '/assets/images/CleanDataPython-27.PNG' | relative_url }})
 
@@ -293,7 +294,7 @@ You might want to **r****ename an index**. To rename the index '0' with 'person1
 
 `data2 = data.rename(index={0: 'person1'})` 
 
-Again, in order to retain your changes, it is important to assign a variable to the returning dataset. Using **data2 \=** ensures the changes are saved to another varaible, keeping the original data frame, named 'data' in tact.
+Again, in order to retain your changes, it is important to assign a variable to the returning dataset. Using **data2 =** ensures the changes are saved to another varaible, keeping the original data frame, named 'data' in tact.
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy_rename_index.PNG.pagespeed.ic.XgHzvmIPAa.png)![]({{ '/assets/images/CleanDataPython-28.PNG' | relative_url }})
 
@@ -303,9 +304,9 @@ Here we are dividing the survery's respondents in 4 groups based on the "Variabl
 
 `pandas.cut(data.AUDG06, 4)`
 
- 
+![CleanDataPython-47](https://mdl.library.utoronto.ca/sites/default/public/CleanDataPython-47.PNG)
 
-### 
+
 
 ...
 
@@ -333,7 +334,7 @@ You can see a new column "CITIZEN" is added in the image at the end of the datas
 
 ### **Rename variables**
 
-To rename the column "ADM\_RNO" to "ADM" and the column "GEO\_PRV" to "GEO", the following code can be used:
+To rename the column "ADM_RNO" to "ADM" and the column "GEO_PRV" to "GEO", the following code can be used:
 
 `data.rename(columns={'ADM_RNO':'ADM', 'GEO_PRV':'GEO'})`
 
@@ -345,16 +346,17 @@ To rename the column "ADM\_RNO" to "ADM" and the column "GEO\_PRV" to "GEO", the
 
 Sometimes, it is necessary to merge disparate datasets.
 
-In order to demonstrate the merge command, we will first select and 'save' 2 subsets from our dataset that we can then merge. It is important to remember that we are merging these datasets based on a unique shared key, the first column (Index), and as a result both subsets will share this column. Subset\_7 will include the first 10 observations with columns 0 \- 99; subset\_8 will include the first 10 observations with columns 1, 100, 101 and 102\.
+In order to demonstrate the merge command, we will first select and 'save' 2 subsets from our dataset that we can then merge. It is important to remember that we are merging these datasets based on a unique shared key, the first column (Index), and as a result both subsets will share this column. Subset_7 will include the first 10 observations with columns 0 - 99; subset_8 will include the first 10 observations with columns 1, 100, 101 and 102.
 
-`subset_7=data.iloc[:10, :100] #create the first subset`  
+`subset_7=data.iloc[:10, :100] #create the first subset`
+
 `subset_8=data.iloc[:10, [1, 100, 101, 102]] #create the second subset`
 
 To then merge our subsets we will use the following code:
 
 `subset_7.merge(subset_8) #merge the two subsets`
 
-The merged dataset should have the dimension 10\*103 (as each subset had 10 rows and now invludes the combined columns 0\-102\).
+The merged dataset should have the dimension 10*103 (as each subset had 10 rows and now invludes the combined columns 0-102).
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy014.png.pagespeed.ic.E5KgTFAxkh.png)![]({{ '/assets/images/CleanDataPython-55.PNG' | relative_url }})
 
@@ -366,8 +368,8 @@ The merged dataset should have the dimension 10\*103 (as each subset had 10 rows
 
 This concludes the *Cleaning Data in Python* tutorial, but it’s only the beginning for an aspiring Data Analyst. Here we list some resources that you might find helpful:
 
-* Python for Data Analysis: [http://shop.oreilly.com/product/0636920023784\.do](http://shop.oreilly.com/product/0636920023784.do)
-* A list of packages’ website:NumPy: <http://www.numpy.org/>; matplotlib: <http://matplotlib.org/>; pandas: [http://pandas.pydata.org/](http://pandas.pydata.org); SciPy: [http://www.scipy.org/](http://www.scipy.org);sklearn: [http://scikit\-learn.org/stable/](http://scikit-learn.org/stable/)
+* Python for Data Analysis: [http://shop.oreilly.com/product/0636920023784.do](http://shop.oreilly.com/product/0636920023784.do)
+* A list of packages’ website:NumPy: <http://www.numpy.org/>; matplotlib: <http://matplotlib.org/>; pandas: [http://pandas.pydata.org/](http://pandas.pydata.org); SciPy: [http://www.scipy.org/](http://www.scipy.org);sklearn: [http://scikit-learn.org/stable/](http://scikit-learn.org/stable/)
 * Getting Started with Python for Data Science: <https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience>
 * Google’s Python Class (for people new to Python): <https://developers.google.com/edu/python/>
 * OpenIntro Statistics: <https://www.openintro.org/stat/textbook.php>
@@ -375,4 +377,4 @@ This concludes the *Cleaning Data in Python* tutorial, but it’s only the begin
 
 Enjoy analyzing data!
 
-Technique: [Cleaning data](/technique/cleaning-data) \| Tools: [Python](/tools/python)**Date Created:** 2016\-11\-01**Updated:** 2022\-12\-15
+Technique: [Cleaning data](/technique/cleaning-data) | Tools: [Python](/tools/python)
