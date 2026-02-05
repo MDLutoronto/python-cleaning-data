@@ -119,9 +119,11 @@ After you open Spyder, you can direct it to the dataset that you want to clean. 
 
 The following code for sets up a working directory. Please note, in python, anything after the "#" symbol is considered to be comments related to the code.
 
-`import os #import the os library (enables operating system dependent functionality)  
+``` py
+import os #import the os library (enables operating system dependent functionality)  
 os.chdir('C:YourFolderPathGoesHere') #change directory  
-os.getcwd() #get the current working directory to confirm the directory change`
+os.getcwd() #get the current working directory to confirm the directory change
+```
 
 ![]({{ '/assets/images/CleanDataPython-38_0.PNG' | relative_url }})
 
@@ -133,12 +135,14 @@ Above the console in the "***Help***" pane, you can take a look of the files loa
 
 You can then input the below scripts in the console to load your dataset into the program. Note that the csv file has to be in the current working directory, otherwise an error will be raised.
 
-`import pandas #import the pandas data analysis library  
-data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv')`
+``` py
+import pandas #import the pandas data analysis library 
+data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv')
+```
 
 ![]({{ '/assets/images/CleanDataPython-39.PNG' | relative_url }})
 
-The first line imports the ***pandas*** library, which will be used throughout this tutorial. The next line uses the ***read_csv*** command in pandas to load the CCHS2012 dataset to the system and assigns it the variable "data". From now on, when you want to refer to your CCHS2012 dataset, you can just use the variable "data".
+The first line imports the ***pandas*** library, which will be used throughout this tutorial. The next line uses the ***read_csv*** command in pandas to load the CCHS2012 dataset to the system and assigmins it the variable "data". From now on, when you want to refer to your CCHS2012 dataset, you can just use the variable "data".
 
 It is always helpful to get an idea of our dataset before cleaning it. Above the console in the ***Help*** pane, by clicking on the tab "***Variable explorer***" you will be able to see the details of each variable defined in the current console session, including data type and size.
 
@@ -150,13 +154,17 @@ Double-clicking a variable in the "Variable explorer" pane will open a new windo
 
 We can also see the dimension of the dataset using the ***shape*** command. In our case, the dataset has 25113 rows and 586 columns.
 
-`print(data.shape)`
+``` py
+print(data.shape)
+```
 
 ![]({{ '/assets/images/CleanDataPython-43.PNG' | relative_url }})
 
 Furthermore, we can view the descriptive statistics of the varaibles in our dataset with numeric values using the ***describe*** command.
 
-`data.describe()`
+``` py
+data.describe()
+```
 
 ![]({{ '/assets/images/CleanDataPython-44.PNG' | relative_url }})
 
@@ -164,14 +172,19 @@ It is important for our analysis to identify the missing values in our dataset. 
 
 Suppose a column that's expected to have numerical values has recorded the letter 'g' by mistake in some records. We can use the below code to set these extraneous values to NaN.
 
-`data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=['g'])`  
-`#we can assign the variable 'data_no_gs' for example to retain the original 'data' variable`
+``` py
+data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=['g'])
+
+#we can assign the variable 'data_no_gs' for example to retain the original 'data' variable
+```
 
 ![]({{ '/assets/images/CleanDataPython-44_0.PNG' | relative_url }})
 
 If a dataset contains missing data indicated by 'NA', you can read the data in as follows:
 
-`data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=['NA'])`
+``` py
+data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=['NA'])
+```
 
 ![]({{ '/assets/images/CleanDataPython-46.PNG' | relative_url }})
 
@@ -179,13 +192,17 @@ Furthremore, if we want to understand how a particular dataset records missing v
 
 In our case, we will refer to the accompanying downloaded codebook, where it states that the value '96' denotes the term 'Not Applicable'. To then set this value to 'NaN' the the following code can be used.
 
-`data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=[96])`
+``` py
+data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=[96])
+```
 
 ![]({{ '/assets/images/CleanDataPython-45.PNG' | relative_url }})
 
 You can find all the rows where a specific column holds NaN values as follows:
 
-`data[pandas.isnull(data['GEO_PRV'])]`
+``` py
+data[pandas.isnull(data['GEO_PRV'])]
+```
 
 Though in this case, the column 'GEO_PRV' does not contain any NaN values, resulting in an empty data frame.
 
@@ -199,7 +216,10 @@ Pandas offers a variety of options for selecting subests of a dataset. Subset se
 
 **You can create a subset by selecting observations**: e.g. get the first 100 observations (rows)
 
-`data.iloc[:100,:] #get the first 100 observations in a dataset`  
+``` py
+data.iloc[:100,:] #get the first 100 observations in a dataset
+```
+
 ![]({{ '/assets/images/CleanDataPython-13.PNG' | relative_url }})![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy004.png.pagespeed.ic.z8mZ_bDESL.png)
 
 **...                 ...            ...              ...                ...        ...**
@@ -208,7 +228,9 @@ Pandas offers a variety of options for selecting subests of a dataset. Subset se
 
 **By selecting variables**: e.g. get the first 100 variables (columns)
 
-`data.iloc[:,:100] #get the first 100 variables in a dataset`
+``` python
+data.iloc[:,:100] #get the first 100 variables in a dataset
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy005.png.pagespeed.ic.Ebl59BxZcn.png)![]({{ '/assets/images/CleanDataPython-15.PNG' | relative_url }})
 
@@ -218,7 +240,9 @@ Pandas offers a variety of options for selecting subests of a dataset. Subset se
 
 **Or by selecting both**: e.g. get the first 100 rows and 100 columns of the original dataset
 
-`data.iloc[:100,:100] #get the first 100 rows * 100 columns`
+``` py
+data.iloc[:100,:100] #get the first 100 rows * 100 columns
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy006.png.pagespeed.ic.61cJarnPzV.png)![]({{ '/assets/images/CleanDataPython-17.PNG' | relative_url }})
 
@@ -228,7 +252,9 @@ Pandas offers a variety of options for selecting subests of a dataset. Subset se
 
 **Furthermore, you can create a subset by selecting variable names**: e.g. get column “VERDATE”, “ADM_RNO”,  and “GEO_PRV”
 
-`data.loc[:,['VERDATE', 'ADM_RNO', 'GEO_PRV']]` 
+``` py
+data.loc[:,['VERDATE', 'ADM_RNO', 'GEO_PRV']]
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy007.png.pagespeed.ic.6qrisksez7.png)![]({{ '/assets/images/CleanDataPython-19.PNG' | relative_url }})
 
@@ -244,7 +270,9 @@ Pandas also allows us to drop, or remove, extraneous data from our dataset.
 
 **We can drop specific observations**: e.g. drop the rows with index 1 and 3
 
-`data.drop([1, 3])`
+``` py
+data.drop([1, 3])
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy008.png.pagespeed.ic.ZEtiNeURVz.png)![]({{ '/assets/images/CleanDataPython-21.PNG' | relative_url }})
 
@@ -256,7 +284,9 @@ Pandas also allows us to drop, or remove, extraneous data from our dataset.
 
 **Or we can drop variables**: e.g. drop columns with header "GEOGCMA1" and "ADM_N09". Note that in the command, **axis=1** indicates a column to be dropped. Axis=0 indicates a row/index to be dropped.
 
-`data.drop(['GEOGCMA1', 'ADM_N09'], axis=1)`
+``` py
+data.drop(['GEOGCMA1', 'ADM_N09'], axis=1)
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy009.png.pagespeed.ic.e1dDAHtkQt.png)![]({{ '/assets/images/CleanDataPython-23.PNG' | relative_url }})
 
@@ -272,7 +302,9 @@ In many instances, it will be necessary to transform your dataset to a form you 
 
 You might have to **r****emove duplicate observations**:
 
-`data.drop_duplicates()`
+``` py
+data.drop_duplicates()
+```
 
 In our case, there are no duplicate rows that need to be dropped.
 
@@ -284,7 +316,9 @@ In our case, there are no duplicate rows that need to be dropped.
 
 You might want to **r****eplace values**. To replace all instances of the value 1 with the value 7 for the entire dataset you can use the following code:
 
-`data = data.replace(1, 7)`
+``` py
+data = data.replace(1, 7)
+```
 
 The replace function returns a **copy** of the altered dataset but keeps the original dataset intact. In order to retain your changes, it is important to assign a variable to the returning dataset. Using **data =** replaces the previous dataset with the renamed dataset (in this case, the original dataset 'data' is replaced with the result of the replace function).
 
@@ -292,7 +326,9 @@ The replace function returns a **copy** of the altered dataset but keeps the ori
 
 You might want to **r****ename an index**. To rename the index '0' with 'person1' the following command can be used:
 
-`data2 = data.rename(index={0: 'person1'})` 
+``` py
+data2 = data.rename(index={0: 'person1'})
+```
 
 Again, in order to retain your changes, it is important to assign a variable to the returning dataset. Using **data2 =** ensures the changes are saved to another varaible, keeping the original data frame, named 'data' in tact.
 
@@ -302,7 +338,9 @@ Sometimes numerical values make more sense if clustered together.This is called 
 
 Here we are dividing the survery's respondents in 4 groups based on the "Variable AUDG06: Number of drinks per day on days when drank in past 12 months".
 
-`pandas.cut(data.AUDG06, 4)`
+``` py
+pandas.cut(data.AUDG06, 4)
+```
 
 ![CleanDataPython-47](https://mdl.library.utoronto.ca/sites/default/public/CleanDataPython-47.PNG)
 
@@ -320,7 +358,9 @@ At the bottom of the result, it displays the break values of the dataset for the
 
 We can create a new column “CITIZEN” and designate the value for all observations to be 1:
 
-`data.assign(CITIZEN = 1)`
+``` py
+data.assign(CITIZEN = 1)
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy012.png.pagespeed.ic.DBRUpsyiHT.png)![]({{ '/assets/images/CleanDataPython-52.PNG' | relative_url }})
 
@@ -336,7 +376,9 @@ You can see a new column "CITIZEN" is added in the image at the end of the datas
 
 To rename the column "ADM_RNO" to "ADM" and the column "GEO_PRV" to "GEO", the following code can be used:
 
-`data.rename(columns={'ADM_RNO':'ADM', 'GEO_PRV':'GEO'})`
+``` py
+data.rename(columns={'ADM_RNO':'ADM', 'GEO_PRV':'GEO'})
+```
 
 ![](https://data.library.utoronto.ca/sites/default/public/pictures/xpy013.png.pagespeed.ic.HJbEG3MWmI.png)![]({{ '/assets/images/CleanDataPython-54.PNG' | relative_url }})
 
@@ -348,13 +390,18 @@ Sometimes, it is necessary to merge disparate datasets.
 
 In order to demonstrate the merge command, we will first select and 'save' 2 subsets from our dataset that we can then merge. It is important to remember that we are merging these datasets based on a unique shared key, the first column (Index), and as a result both subsets will share this column. Subset_7 will include the first 10 observations with columns 0 - 99; subset_8 will include the first 10 observations with columns 1, 100, 101 and 102.
 
-`subset_7=data.iloc[:10, :100] #create the first subset`
 
-`subset_8=data.iloc[:10, [1, 100, 101, 102]] #create the second subset`
+``` py
+subset_7=data.iloc[:10, :100] #create the first subset
+
+subset_8=data.iloc[:10, [1, 100, 101, 102]] #create the second subset
+```
 
 To then merge our subsets we will use the following code:
 
-`subset_7.merge(subset_8) #merge the two subsets`
+``` py
+subset_7.merge(subset_8) #merge the two subsets
+```
 
 The merged dataset should have the dimension 10*103 (as each subset had 10 rows and now invludes the combined columns 0-102).
 
@@ -377,4 +424,4 @@ This concludes the *Cleaning Data in Python* tutorial, but it’s only the begin
 
 Enjoy analyzing data!
 
-Technique: [Cleaning data](/technique/cleaning-data) | Tools: [Python](/tools/python)
+Technique: [Cleaning data](https://mdl.library.utoronto.ca/technique/cleaning-data) | Tools: [Python](https://mdl.library.utoronto.ca/tools/python)
