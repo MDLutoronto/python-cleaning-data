@@ -17,25 +17,26 @@ This guide shows the user how to use Spyder to load and clean data for further a
 
 #### **Set up environment**
 
-* [Software](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#setup)
-* [Data analysis packages in Python](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#packages)
+* [Software](#software)
+* [Data analysis packages in Python](#data-analysis-packages-in-python)
 
 #### **Cleaning data in python**
 
-* [Download Dataset](#Download Dataset)
-* [Load dataset into Spyder](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#load)
-* [Subset](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#subset)
-* [Drop data](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#drop)
-* [Transform data](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#transform)
-* [Create new variables](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#create)
-* [Rename variables](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#rename)
-* [Merge two datasets](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#merge)
-* [A few last words](https://mdl.library.utoronto.ca/technology/tutorials/cleaning-data-python#lastword)
+* [Download Dataset](#download-dataset)
+* [Load dataset into Spyder](#load-dataset-into-spyder)
+* [Subset](#subset)
+* [Drop data](#drop-data)
+* [Transform data](#transform-data)
+* [Create new variables](#create-new-variables)
+* [Rename variables](#rename-variables)
+* [Merge two datasets](#merge-two-datasets)
+* [A few last words](#a-few-last-words)
 
 **SET UP ENVIRONMENT**
 ----------------------
 
 ### **Software**
+{: software}
 
 If you are using Python for data analysis, we recommend the **Anaconda Scientific Python Distribution**. It is completely free, and ideal for processing data as well as for performing predictive analysis and scientific computing. You can get the latest version of Anaconda at <https://www.anaconda.com/distribution/>. It's available for Windows, macOS, and Linux. For more information about getting started with Anaconda and other Anaconda-related support, please refer to [https://docs.anaconda.com/anaconda/](https://docs.anaconda.com/anaconda/.).
 
@@ -70,6 +71,7 @@ Lastly, you can personalize the font, background color, theme and other appearan
  
 
 ### **Data analysis packages in Python**
+{: #data-analysis-packages-in-python}
 
 For data analysis in Python, we recommend several libraries (also referred to as packages). A Python library is a collection of functions and methods that allow you to executre complex actions without writing long lines of code. All these libraries are included in the Spyder platform and can simply be imported and used. These include:
 
@@ -90,6 +92,7 @@ This tutorial will cover the basic steps needed for cleaning data using Python.
  
 
 ### **Download Dataset**
+{: #download-dataset }
 
 The dataset used in this tutorial is the **Canadian Community Health Survey, 2012: Mental Health Component**. You can directly access the dataset from here: [https://search1.odesi.ca/#/details?uri=%2Fodesi%2Fcchs-82M0013-E-2012-m…](https://search1.odesi.ca/#/details?uri=%2Fodesi%2Fcchs-82M0013-E-2012-mental-health.xml), or you can go to [odesi.ca](https://search2.odesi.ca/#/) and search for the term "CCHS 2012". Choose the entry, "Canadian Community Health Survey, 2012: Mental Health Component".
 
@@ -114,12 +117,13 @@ You will find a csv file and a PDF file in the unzipped folder. The csv file con
  
 
 ### **Load dataset into Spyder**
+{: #load-dataset-into-spyder}
 
 After you open Spyder, you can direct it to the dataset that you want to clean. This is the location (path) of where your unzipped folder is saved on your computer and is achieved by running a few lines of code that set up your working directory. If you are new to paths and working directories, a succinct introduction can be found [here](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python/). Furthermore, these tutorials provide instructions on determining the path of your unzipped folder in [windows](https://www.isumsoft.com/computer/2-ways-to-copy-full-path-of-files-and-folders.html) and [mac](https://www.switchingtomac.com/tutorials/osx/5-ways-to-reveal-the-path-of-a-file-on-macos/) operating systems.
 
 The following code for sets up a working directory. Please note, in python, anything after the "#" symbol is considered to be comments related to the code.
 
-``` py
+```py
 import os #import the os library (enables operating system dependent functionality)  
 os.chdir('C:YourFolderPathGoesHere') #change directory  
 os.getcwd() #get the current working directory to confirm the directory change
@@ -135,7 +139,7 @@ Above the console in the "***Help***" pane, you can take a look of the files loa
 
 You can then input the below scripts in the console to load your dataset into the program. Note that the csv file has to be in the current working directory, otherwise an error will be raised.
 
-``` py
+```py
 import pandas #import the pandas data analysis library 
 data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv')
 ```
@@ -154,7 +158,7 @@ Double-clicking a variable in the "Variable explorer" pane will open a new windo
 
 We can also see the dimension of the dataset using the ***shape*** command. In our case, the dataset has 25113 rows and 586 columns.
 
-``` py
+```py
 print(data.shape)
 ```
 
@@ -162,7 +166,7 @@ print(data.shape)
 
 Furthermore, we can view the descriptive statistics of the varaibles in our dataset with numeric values using the ***describe*** command.
 
-``` py
+```py
 data.describe()
 ```
 
@@ -172,7 +176,7 @@ It is important for our analysis to identify the missing values in our dataset. 
 
 Suppose a column that's expected to have numerical values has recorded the letter 'g' by mistake in some records. We can use the below code to set these extraneous values to NaN.
 
-``` py
+```py
 data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=['g'])
 
 #we can assign the variable 'data_no_gs' for example to retain the original 'data' variable
@@ -182,7 +186,7 @@ data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_
 
 If a dataset contains missing data indicated by 'NA', you can read the data in as follows:
 
-``` py
+```py
 data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=['NA'])
 ```
 
@@ -192,7 +196,7 @@ Furthremore, if we want to understand how a particular dataset records missing v
 
 In our case, we will refer to the accompanying downloaded codebook, where it states that the value '96' denotes the term 'Not Applicable'. To then set this value to 'NaN' the the following code can be used.
 
-``` py
+```py
 data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_values=[96])
 ```
 
@@ -200,7 +204,7 @@ data = pandas.read_csv('cchs-82M0013-E-2012-mental-health_F1.csv', header=0, na_
 
 You can find all the rows where a specific column holds NaN values as follows:
 
-``` py
+```py
 data[pandas.isnull(data['GEO_PRV'])]
 ```
 
@@ -211,12 +215,13 @@ Though in this case, the column 'GEO_PRV' does not contain any NaN values, resul
  
 
 ### **Subset**
+{: subset}
 
 Pandas offers a variety of options for selecting subests of a dataset. Subset selection is simply selecting particular rows and columns of data from your data frame.
 
 **You can create a subset by selecting observations**: e.g. get the first 100 observations (rows)
 
-``` py
+```py
 data.iloc[:100,:] #get the first 100 observations in a dataset
 ```
 
@@ -228,7 +233,7 @@ data.iloc[:100,:] #get the first 100 observations in a dataset
 
 **By selecting variables**: e.g. get the first 100 variables (columns)
 
-``` python
+```py
 data.iloc[:,:100] #get the first 100 variables in a dataset
 ```
 
@@ -240,7 +245,7 @@ data.iloc[:,:100] #get the first 100 variables in a dataset
 
 **Or by selecting both**: e.g. get the first 100 rows and 100 columns of the original dataset
 
-``` py
+```py
 data.iloc[:100,:100] #get the first 100 rows * 100 columns
 ```
 
@@ -252,7 +257,7 @@ data.iloc[:100,:100] #get the first 100 rows * 100 columns
 
 **Furthermore, you can create a subset by selecting variable names**: e.g. get column “VERDATE”, “ADM_RNO”,  and “GEO_PRV”
 
-``` py
+```py
 data.loc[:,['VERDATE', 'ADM_RNO', 'GEO_PRV']]
 ```
 
@@ -265,12 +270,13 @@ data.loc[:,['VERDATE', 'ADM_RNO', 'GEO_PRV']]
  
 
 ### **Drop data**
+{: drop-data}
 
 Pandas also allows us to drop, or remove, extraneous data from our dataset.
 
 **We can drop specific observations**: e.g. drop the rows with index 1 and 3
 
-``` py
+```py
 data.drop([1, 3])
 ```
 
@@ -284,7 +290,7 @@ data.drop([1, 3])
 
 **Or we can drop variables**: e.g. drop columns with header "GEOGCMA1" and "ADM_N09". Note that in the command, **axis=1** indicates a column to be dropped. Axis=0 indicates a row/index to be dropped.
 
-``` py
+```py
 data.drop(['GEOGCMA1', 'ADM_N09'], axis=1)
 ```
 
@@ -297,12 +303,13 @@ data.drop(['GEOGCMA1', 'ADM_N09'], axis=1)
  
 
 ### **Transform data**
+{: transform-data}
 
 In many instances, it will be necessary to transform your dataset to a form you can work with.
 
 You might have to **r****emove duplicate observations**:
 
-``` py
+```py
 data.drop_duplicates()
 ```
 
@@ -316,7 +323,7 @@ In our case, there are no duplicate rows that need to be dropped.
 
 You might want to **r****eplace values**. To replace all instances of the value 1 with the value 7 for the entire dataset you can use the following code:
 
-``` py
+``py
 data = data.replace(1, 7)
 ```
 
@@ -326,7 +333,7 @@ The replace function returns a **copy** of the altered dataset but keeps the ori
 
 You might want to **r****ename an index**. To rename the index '0' with 'person1' the following command can be used:
 
-``` py
+```py
 data2 = data.rename(index={0: 'person1'})
 ```
 
@@ -338,7 +345,7 @@ Sometimes numerical values make more sense if clustered together.This is called 
 
 Here we are dividing the survery's respondents in 4 groups based on the "Variable AUDG06: Number of drinks per day on days when drank in past 12 months".
 
-``` py
+```py
 pandas.cut(data.AUDG06, 4)
 ```
 
@@ -355,10 +362,11 @@ At the bottom of the result, it displays the break values of the dataset for the
  
 
 ### **Create new variables**
+{: create-new-variables}
 
 We can create a new column “CITIZEN” and designate the value for all observations to be 1:
 
-``` py
+```py
 data.assign(CITIZEN = 1)
 ```
 
@@ -373,10 +381,11 @@ You can see a new column "CITIZEN" is added in the image at the end of the datas
  
 
 ### **Rename variables**
+{: rename-variables}
 
 To rename the column "ADM_RNO" to "ADM" and the column "GEO_PRV" to "GEO", the following code can be used:
 
-``` py
+```py
 data.rename(columns={'ADM_RNO':'ADM', 'GEO_PRV':'GEO'})
 ```
 
@@ -384,14 +393,15 @@ data.rename(columns={'ADM_RNO':'ADM', 'GEO_PRV':'GEO'})
 
  
 
-### **Merge two data sets**
+### **Merge two datasets**
+{: merge-two-dataset}
 
 Sometimes, it is necessary to merge disparate datasets.
 
 In order to demonstrate the merge command, we will first select and 'save' 2 subsets from our dataset that we can then merge. It is important to remember that we are merging these datasets based on a unique shared key, the first column (Index), and as a result both subsets will share this column. Subset_7 will include the first 10 observations with columns 0 - 99; subset_8 will include the first 10 observations with columns 1, 100, 101 and 102.
 
 
-``` py
+```py
 subset_7=data.iloc[:10, :100] #create the first subset
 
 subset_8=data.iloc[:10, [1, 100, 101, 102]] #create the second subset
@@ -399,7 +409,7 @@ subset_8=data.iloc[:10, [1, 100, 101, 102]] #create the second subset
 
 To then merge our subsets we will use the following code:
 
-``` py
+```py
 subset_7.merge(subset_8) #merge the two subsets
 ```
 
@@ -412,6 +422,7 @@ The merged dataset should have the dimension 10*103 (as each subset had 10 rows 
  
 
 ### **A few last words**
+{: a-few-lst-words}
 
 This concludes the *Cleaning Data in Python* tutorial, but it’s only the beginning for an aspiring Data Analyst. Here we list some resources that you might find helpful:
 
