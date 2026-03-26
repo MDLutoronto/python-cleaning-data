@@ -3,6 +3,9 @@ title: "Cleaning Data in Python"
 layout: "home"
 description: "This guide shows the user how to use Spyder to load and clean data for further analysis."
 created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 permalink: "/"  #! Remove this if not the homepage
 ---
 
