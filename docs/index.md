@@ -437,5 +437,3 @@ This concludes the *Cleaning Data in Python* tutorial, but it’s only the begin
 * Last but not least, Google is your friend and questions you’ll meet have probably been asked before.
 
 Enjoy analyzing data!
-
-Technique: [Cleaning data](https://mdl.library.utoronto.ca/technique/cleaning-data) | Tools: [Python](https://mdl.library.utoronto.ca/tools/python)
