@@ -2,6 +2,10 @@
 title: Download Dataset
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 3
 ---
 
@@ -23,6 +27,8 @@ In the download page, from the "select the data format" drop-down menu, pick "**
 
 ![]({{ '/assets/images/CleanDataPython-37.PNG' | relative_url }})
 
-This downloaded file must be unzipped before it can be used. If this is unfamiliar to you, this [tutorial](https://www.techolac.com/how-to/how-to-zip-and-unzip-files-on-windows-and-mac/) covers unzipping files in both windows and mac operating systems.
+This downloaded file must be unzipped before it can be used. 
 
 You will find a csv file and a PDF file in the unzipped folder. The csv file contains the data we will be cleaning, and the PDF file contains the metadata in the form of a codebook for all variables in this dataset. We will refer to the codebook if we would like more information on a certain variable.
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

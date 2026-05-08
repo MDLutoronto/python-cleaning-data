@@ -2,6 +2,10 @@
 title: Subset
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 5
 ---
 
@@ -56,3 +60,5 @@ data.loc[:,['VERDATE', 'ADM_RNO', 'GEO_PRV']]
 **...            ...                     ...                     ...**
 
 **![]({{ '/assets/images/CleanDataPython-20.PNG' | relative_url }})**
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

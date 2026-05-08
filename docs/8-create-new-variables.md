@@ -2,6 +2,10 @@
 title: Create new variables
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 8
 ---
 
@@ -20,3 +24,5 @@ data.assign(CITIZEN = 1)
 ![]({{ '/assets/images/CleanDataPython-53.PNG' | relative_url }})
 
 You can see a new column "CITIZEN" is added in the image at the end of the dataset.
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

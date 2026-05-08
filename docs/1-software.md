@@ -2,6 +2,10 @@
 title: Software
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 1
 ---
 
@@ -36,3 +40,5 @@ More functions of the Help section will be introduced later in this tutorial.
 Lastly, you can personalize the font, background color, theme and other appearance properties of Sypder. This can be done by clicking **Tools** (at the top menu) **> Preferences**. Below is an example of a dark background theme in Spyder.
 
 ![]({{ '/assets/images/CleanDataPython-30.png' | relative_url }})
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)
