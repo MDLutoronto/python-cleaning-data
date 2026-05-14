@@ -2,6 +2,10 @@
 title: Tranform Data
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 7
 ---
 
@@ -60,3 +64,5 @@ pandas.cut(data.AUDG06, 4)
 ![]({{ '/assets/images/CleanDataPython-48.PNG' | relative_url }})
 
 At the bottom of the result, it displays the break values of the dataset for the four categories divided.
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

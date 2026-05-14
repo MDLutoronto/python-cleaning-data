@@ -9,10 +9,11 @@ maintainer:
 permalink: "/"  #! Remove this if not the homepage
 nav_order: 0
 has_children: true
+has_toc: false
 ---
 
 # Cleaning Data in Python
 
 This guide shows the user how to use Spyder to load and clean data for further analysis.
 
-Technique: [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) | Tools: [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

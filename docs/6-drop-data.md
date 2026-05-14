@@ -2,6 +2,10 @@
 title: Drop Data
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 6
 ---
 
@@ -34,3 +38,5 @@ data.drop(['GEOGCMA1', 'ADM_N09'], axis=1)
 **...                       ...               ...           ...               ...               ...        ...**
 
 **![]({{ '/assets/images/CleanDataPython-24.PNG' | relative_url }})**
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

@@ -2,6 +2,10 @@
 title: Load dataset into Spyder
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 4
 ---
 
@@ -99,3 +103,5 @@ data[pandas.isnull(data['GEO_PRV'])]
 Though in this case, the column 'GEO_PRV' does not contain any NaN values, resulting in an empty data frame.
 
 ![]({{ '/assets/images/CleanDataPython-10.PNG' | relative_url }})
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)

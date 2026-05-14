@@ -2,6 +2,10 @@
 title: Data analysis packages in Python
 parent: Cleaning Data in Python
 layout: default
+created_date: 2016-11-01
+maintainer:
+    - name: Neil Aitken
+      link: https://library.utoronto.ca/staff/neil-aitken
 nav_order: 2
 ---
 
@@ -14,3 +18,5 @@ For data analysis in Python, we recommend several libraries (also referred to as
 * **matplotlib**: the most popular Python library for producing graphs and other 2D data visualizations
 * **SciPy**: a collection of packages addressing a number of different standard problem domains in scientific computing
 * **sklearn**: a machine learning library
+
+**Technique:** [Cleaning data](https://mdlutoronto.github.io/tutorials-search/?technique=Cleaning+data) \| **Tools:** [Python](https://mdlutoronto.github.io/tutorials-search/?tool=Python)
